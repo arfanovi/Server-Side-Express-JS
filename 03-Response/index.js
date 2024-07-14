@@ -16,10 +16,27 @@ app.post("/two", function(req, res) {
     res.end("This is Simple String Route");
 });
 
+
+
 // Response Status Code 
 app.get("/three", function(req, res){
     res.status(401)
     res.end("Unauthorize") 
+})
+
+
+
+
+// JSON Response 
+app.get("/four", function(req, res){
+
+    let myJSONArray = {
+        name: "Ovi",
+        city: "Dhaka",
+        occupation: "Engineering"
+    }
+
+    res.json(myJSONArray)
 })
 
 
