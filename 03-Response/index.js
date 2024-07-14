@@ -45,6 +45,29 @@ app.get("/five", function(req, res){
     res.download("./upload/upload.jpg")
 })
 
+
+
+
+
+
+// Response Redirect
+
+
+app.get("/Bangladesh", function(req, res){
+    
+    res.redirect("http://localhost:1000/India")
+
+})
+
+app.get("/India", function(req, res){
+
+    res.send("This is india")
+
+})
+
+
+
+
 app.listen(1000, function () {
     console.log('Server Run Success');
 });
