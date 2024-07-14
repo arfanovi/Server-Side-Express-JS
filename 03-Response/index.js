@@ -40,6 +40,10 @@ app.get("/four", function(req, res){
 })
 
 
+// Upload 
+app.get("/five", function(req, res){
+    res.download("./upload/upload.jpg")
+})
 
 app.listen(1000, function () {
     console.log('Server Run Success');
