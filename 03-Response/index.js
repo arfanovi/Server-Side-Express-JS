@@ -67,6 +67,18 @@ app.get("/India", function(req, res){
 
 
 
+//  Response Header
+
+app.get("/Six", function(req, res){
+    res.append("name", "Ovi")
+    res.append("city", "mirpur")
+    res.append("occupation", "Engineering")
+    res.status(201).end("Header")
+
+})
+
+
+
 
 app.listen(1000, function () {
     console.log('Server Run Success');
