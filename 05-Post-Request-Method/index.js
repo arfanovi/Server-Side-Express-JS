@@ -4,6 +4,8 @@ let express = require('express');
 let app = express();
 
 
+let bodyParser = require('body-parser')
+
 
 
 /*
@@ -20,9 +22,11 @@ app.post("/", function(req, res) {
 */
 
 
+
+
 //  Post Request With Header Properties
 
-
+/*
 app.post("/", function(req, res) {
 
     let userName = req.header("userName");
@@ -34,8 +38,27 @@ app.post("/", function(req, res) {
 
 })
 
+*/
 
 
+
+
+// Post application-json
+
+app.use(bodyParser.json());
+
+app.post("/", function(req, res) {
+   let jsonData =  req.body;
+
+   let jsonString = JSON.stringify(jsonData)
+
+//    Specific JSON Data 
+    let name = jsonData["name"];
+    res.send(name)
+
+    // res.send(jsonString);
+
+})
 
 
 app.listen(1600, function () {
