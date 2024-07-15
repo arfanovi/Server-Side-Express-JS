@@ -80,6 +80,27 @@ app.get("/Six", function(req, res){
 
 
 
+
+
+// Response Set Cookies
+
+app.get("/Seven", function(req, res) {
+    res.cookie('name', 'Ovi')
+    res.cookie('age', 24)
+    res.cookie('city','mirpur')
+    res.end('Cookie set Success')
+
+})
+
+
+// Cookies Clear 
+app.get("/Eight", function(req,res) {
+    res.clearCookie('name')
+    res.clearCookie('age')
+    res.end('Cookies Clear')
+})
+
+
 app.listen(1000, function () {
     console.log('Server Run Success');
 });
