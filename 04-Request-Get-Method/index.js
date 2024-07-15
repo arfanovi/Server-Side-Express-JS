@@ -3,7 +3,7 @@ let app = express();
 
 
 
-
+/*
 
 app.get('/', function (req, res) {
 
@@ -17,6 +17,23 @@ app.get('/', function (req, res) {
 
 
 });
+
+
+*/
+
+
+
+// Working With Get Request Header
+
+
+app.get('/header', function(req, res) {
+    let firstName = req.header('firstName');
+    let lastName = req.header('lastName');
+
+    res.end(firstName + " " + lastName);
+});
+
+
 
 
 
